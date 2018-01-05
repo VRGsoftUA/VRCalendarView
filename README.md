@@ -1,4 +1,6 @@
 # VRCalendarView
+<img src="https://github.com/VRGsoftUA/VRCalendarView/blob/master/image.jpg" width="250">
+
 
 # Usage
 
