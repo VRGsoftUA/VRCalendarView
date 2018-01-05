@@ -40,29 +40,34 @@ dependencies {
              app:vr_week_days_color="@android:color/darker_gray" />
     ```
 3. You can do same with java
-    ```java
-        vrCalendarView.getSettings().setOtherMonthTextStyle(VRCalendarView.BOLD)
+```java
+        vrCalendarView.getSettings()
+			      .setOtherMonthTextStyle(VRCalendarView.BOLD)
                               .setCurrentMonthBackgroundColor(Color.CYAN)
                               .updateCalendar();
-    ```
+```
+    
 or
-    ```java
+
+ ```java
         vrCalendarView.getSettings()
                        .setOnCalendarClickListener(this)
                        .setOnCalendarLongClickListener(this)
                        .setVRCalendarMonthCallback(this);
-    ```
+ ```
 
 4. You can update all days by calling VRCalendarView.getSettings().updateCalendar();
 
     ```java
-     vrCalendarView.getSettings().setOtherMonthTextStyle(VRCalendarView.BOLD)
-                                  .setCurrentMonthBackgroundColor(Color.CYAN)
-                                  .updateCalendar();
+     vrCalendarView.getSettings()
+     			.setOtherMonthTextStyle(VRCalendarView.BOLD)
+     			.setCurrentMonthBackgroundColor(Color.CYAN)
+     			.updateCalendar();
     ```
-    if VRCalendarView.getSettings().updateCalendar(); is called and you want to save some custom day
-    List<VrCalendarDay> getCustomizeDayView(Calendar calendar) method should be overridden
-    getCustomizeDayView(Calendar calendar) is return all days you need to make custom.
+    
+    if <b>VRCalendarView.getSettings().updateCalendar()</b> is called and you want to save some custom day
+    <b>List<VrCalendarDay> getCustomizeDayView(Calendar calendar)</b> method should be overridden
+    <b>getCustomizeDayView(Calendar calendar)</b> is return all days you need to make custom.
     With parameter calendar you can get the year and the month to return customised days from specific month
     ```java
         @Override
@@ -86,7 +91,7 @@ or
             vrCalendarDays.add(today);
 
             VrCalendarDay tomorrow = new VrCalendarDay();
-            Date d = new Date(1513435110633L);// December 16, 2017
+            Date d = new Date(1513435110633L); // December 16, 2017
             tomorrow.setDate(d);
             VrCalendarDaySettings vrtomorCalendarDaySettings = new VrCalendarDaySettings();
             vrtomorCalendarDaySettings.setDayTextStyle(VRCalendarView.BOLD);
@@ -100,8 +105,10 @@ or
         }
     ```
     You can set set whatever view you want and customise it like you want if standard customisation does not fit
-    Attention!!!
-    View getNewCustomiseView() should always return new View. other wise it doesn't work properly
+    
+    <b>Attention!!!</b>
+    
+    View <b>getNewCustomiseView()</b> should always return new View. other wise it doesn't work properly
     ```java
     today.setVRCalendarCustomViewCallback(new VRCalendarCustomViewCallback() {
                 @Override
@@ -118,7 +125,7 @@ or
     ```java
         vrCalendarView.getSettings().updateCalendarDay(VrCalendarDay today, boolean hasToSelect);
     ```
-    where VrCalendarDay has settings to customise specific day - hasToSelect should be false than
+    where VrCalendarDay has settings to customise specific day - <b>hasToSelect</b> should be false than
     and hasToSelect is boolean that sets specific customisation
     not from VrCalendarDay settings but from default settings that has attribute "chosen". Like below
     ```xml
@@ -158,67 +165,44 @@ or
         void onCalendarDayClick(VrCalendarDay day);
     }
 
-    ```
 that returns VrCalendarDay you click on
 
-     #### Customisation
+#### Customisation
      You can add fields via xml or VrCalendarView or VrCalendarView.getSettings().
-Supported fields:
-     ```xml
-         <attr name="vr_current_day_text_color" format="color" />
-               <attr name="vr_current_month_text_color" format="color" />
-               <attr name="vr_other_month_text_color" format="color" />
-               <attr name="vr_current_month_other_days_text_color" format="color" />
-               <attr name="vr_chosen_day_text_color" format="color" />
+     
+# Supported fields:
 
-               <attr name="vr_current_day_background_color" format="color" />
-               <attr name="vr_current_month_background_color" format="color" />
-               <attr name="vr_other_month_background_color" format="color" />
-               <attr name="vr_current_month_other_days_background_color" format="color" />
-               <attr name="vr_chosen_day_background_color" format="color" />
+| Method  | Type |
+| ------------- | ------------- |
+| vr_current_day_text_color | color |
+| vr_current_month_text_color | color |
+| vr_other_month_text_color | color |
+| vr_current_month_other_days_text_color | color |
+| vr_chosen_day_text_color |color |
+| vr_current_day_background_color | color |
+| vr_current_month_background_color | color |
+| vr_other_month_background_color | color |
+| vr_current_month_other_days_background_color |color |
+| vr_chosen_day_background_color | color |
+| vr_current_day_background_drawable | integer |
+| vr_current_month_background_drawable | integer |
+| vr_other_month_background_drawable" | integer |
+| vr_current_month_other_days_background_drawable | integer |
+| vr_chosen_day_background_drawable | integer |
+| vr_calendar_day_text_size | dimension |
+| vr_calendar_title_text_size | dimension |
+| vr_next_button | integer | 
+| vr_previous_button | integer |
+| vr_title_text_color | color |
+| vr_background_color | color |
+| vr_week_days_color | color |
+| vr_current_day_text_style | normal,bold,italic |
+| vr_current_month_text_style |  normal,bold,italic |
+| vr_other_month_text_style |  normal,bold,italic |
+| vr_current_month_other_days_text_style |  normal,bold,italic |
+| vr_chosen_day_text_style |  normal,bold,italic |
 
-               <attr name="vr_current_day_background_drawable" format="integer" />
-               <attr name="vr_current_month_background_drawable" format="integer" />
-               <attr name="vr_other_month_background_drawable" format="integer" />
-               <attr name="vr_current_month_other_days_background_drawable" format="integer" />
-               <attr name="vr_chosen_day_background_drawable" format="integer" />
+#### Contributing
 
-               <attr name="vr_calendar_day_text_size" format="dimension" />
-               <attr name="vr_calendar_title_text_size" format="dimension" />
-
-               <attr name="vr_next_button" format="integer" />
-               <attr name="vr_previous_button" format="integer" />
-               <attr name="vr_title_text_color" format="color" />
-               <attr name="vr_background_color" format="color" />
-               <attr name="vr_week_days_color" format="color" />
-
-
-               <attr name="vr_current_day_text_style">
-                   <flag name="normal" value="0" />
-                   <flag name="bold" value="1" />
-                   <flag name="italic" value="2" />
-               </attr>
-               <attr name="vr_current_month_text_style">
-                   <flag name="normal" value="0" />
-                   <flag name="bold" value="1" />
-                   <flag name="italic" value="2" />
-               </attr>
-               <attr name="vr_other_month_text_style">
-                   <flag name="normal" value="0" />
-                   <flag name="bold" value="1" />
-                   <flag name="italic" value="2" />
-               </attr>
-               <attr name="vr_current_month_other_days_text_style">
-                   <flag name="normal" value="0" />
-                   <flag name="bold" value="1" />
-                   <flag name="italic" value="2" />
-               </attr>
-               <attr name="vr_chosen_day_text_style">
-                   <flag name="normal" value="0" />
-                   <flag name="bold" value="1" />
-                   <flag name="italic" value="2" />
-               </attr>
-     ```
-     #### Contributing
 * Contributions are always welcome
 * If you want a feature and can code, feel free to fork and add the change yourself and make a pull request
