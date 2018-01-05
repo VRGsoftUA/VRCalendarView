@@ -120,9 +120,9 @@
     <orderEntry type="library" exported="" name="com.android.support:support-core-utils-27.0.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="com.android.support.test.espresso:espresso-idling-resource-2.2.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.annotation:javax.annotation-api:1.2@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.github.VRGsoftUA:VRCalendarView-1.0" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-fragment-27.0.2" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-media-compat-27.0.2" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-v4-27.0.2" level="project" />
-    <orderEntry type="module" module-name="calendar" exported="" />
   </component>
 </module>

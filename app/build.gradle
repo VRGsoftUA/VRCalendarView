@@ -27,5 +27,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:27.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
-    compile project(path: ':calendar')
+    compile 'com.github.VRGsoftUA:VRCalendarView:1.0'
 }
