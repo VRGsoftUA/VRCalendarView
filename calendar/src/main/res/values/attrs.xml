@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="VRCalendarView">
+
+        <attr name="vr_current_day_text_color" format="color" />
+        <attr name="vr_current_month_text_color" format="color" />
+        <attr name="vr_other_month_text_color" format="color" />
+        <attr name="vr_current_month_other_days_text_color" format="color" />
+        <attr name="vr_chosen_day_text_color" format="color" />
+
+        <attr name="vr_current_day_background_color" format="color" />
+        <attr name="vr_current_month_background_color" format="color" />
+        <attr name="vr_other_month_background_color" format="color" />
+        <attr name="vr_current_month_other_days_background_color" format="color" />
+        <attr name="vr_chosen_day_background_color" format="color" />
+
+        <attr name="vr_current_day_background_drawable" format="integer" />
+        <attr name="vr_current_month_background_drawable" format="integer" />
+        <attr name="vr_other_month_background_drawable" format="integer" />
+        <attr name="vr_current_month_other_days_background_drawable" format="integer" />
+        <attr name="vr_chosen_day_background_drawable" format="integer" />
+
+        <attr name="vr_calendar_day_text_size" format="dimension" />
+        <attr name="vr_calendar_title_text_size" format="dimension" />
+
+        <attr name="vr_next_button" format="integer" />
+        <attr name="vr_previous_button" format="integer" />
+        <attr name="vr_title_text_color" format="color" />
+        <attr name="vr_background_color" format="color" />
+        <attr name="vr_week_days_color" format="color" />
+
+
+        <attr name="vr_current_day_text_style">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+        <attr name="vr_current_month_text_style">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+        <attr name="vr_other_month_text_style">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+        <attr name="vr_current_month_other_days_text_style">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+        <attr name="vr_chosen_day_text_style">
+            <flag name="normal" value="0" />
+            <flag name="bold" value="1" />
+            <flag name="italic" value="2" />
+        </attr>
+
+    </declare-styleable>
+</resources>

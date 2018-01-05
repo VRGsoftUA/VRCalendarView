@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.vrgsoft.calendarview.MainActivity">
+
+    <com.vrgsoft.calendar.VRCalendarView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:vr_background_color="@color/colorDark"
+        app:vr_calendar_day_text_size="15sp"
+        app:vr_chosen_day_background_color="@color/colorGreen"
+        app:vr_chosen_day_background_drawable="@drawable/background"
+        app:vr_current_day_text_color="@android:color/darker_gray"
+        app:vr_current_month_other_days_background_drawable="@drawable/background"
+        app:vr_current_month_other_days_text_color="@color/colorAccent"
+        app:vr_current_month_text_color="@android:color/darker_gray"
+        app:vr_next_button="@drawable/ic_next"
+        app:vr_other_month_text_color="@color/colorPrimary"
+        app:vr_previous_button="@drawable/ic_previous"
+        app:vr_title_text_color="@color/colorGreen"
+        app:vr_week_days_color="@android:color/darker_gray" />
+
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/background"
+        android:text="2019.6.27" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/background"
+        android:text="Update"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/background"
+        android:text="2015.6.27" />
+</RelativeLayout>
