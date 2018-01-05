@@ -27,7 +27,6 @@ class CalendarAdapter extends RecyclerView.Adapter<VRCalendarHolder> {
     public void onBindViewHolder(final VRCalendarHolder holder, int position) {
         final VrCalendarDay vrCalendarDay = mCells.get(position);
 
-        // TODO: 03.01.18 need to set drawable to custom any user want to
         if (vrCalendarDay.getVRCalendarCustomViewCallback() != null) {
             VRCalendarCustomViewCallback vrCalendarCustomViewCallback = vrCalendarDay.getVRCalendarCustomViewCallback();
             holder.addCustomView(vrCalendarCustomViewCallback.getNewCustomiseView());
