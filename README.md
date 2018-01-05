@@ -139,7 +139,9 @@ or
             today.setDate(day.getDate());
     ```
 
+    Move to date with
 
+    VrCalendarView.moveToDate(Date date);
 
 5. There is onClick listener and onLongClick
 	```java
