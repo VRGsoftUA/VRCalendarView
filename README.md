@@ -1,5 +1,5 @@
 # VRCalendarView
-<img src="https://github.com/VRGsoftUA/VRCalendarView/blob/master/image.jpg" width="250">
+<img src="https://github.com/VRGsoftUA/VRCalendarView/blob/master/S80109-10512852.jpg" width="250">
 
 
 # Usage
