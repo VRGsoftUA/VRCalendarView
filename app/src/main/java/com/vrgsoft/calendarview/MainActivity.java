@@ -71,10 +71,10 @@ public class MainActivity extends AppCompatActivity implements OnCalendarClickLi
         });
 
         vrCalendarView.setDateFormat(df);
-        vrCalendarView.getDayOfWeekTextView(1).setTextColor(Color.CYAN);
-        vrCalendarView.getDayOfWeekTextView(2).setTextSize(20);
-        vrCalendarView.getDayOfWeekTextView(4).setTextColor(Color.GREEN);
-        vrCalendarView.getDayOfWeekTextView(6).setTextColor(Color.RED);
+        vrCalendarView.getDayOfWeekTextView(VRCalendarView.TUESDAY).setTextColor(Color.CYAN);
+        vrCalendarView.getDayOfWeekTextView(VRCalendarView.WEDNESDAY).setTextSize(20);
+        vrCalendarView.getDayOfWeekTextView(VRCalendarView.FRIDAY).setTextColor(Color.GREEN);
+        vrCalendarView.getDayOfWeekTextView(VRCalendarView.SUNDAY).setTextColor(Color.RED);
         vrCalendarView.getNextMonthImageButton().setImageResource(R.drawable.ic_next_button_example);
         vrCalendarView.weekContainer().setBackgroundColor(Color.LTGRAY);
         vrCalendarView.titleContainer().setBackgroundColor(Color.GRAY);
