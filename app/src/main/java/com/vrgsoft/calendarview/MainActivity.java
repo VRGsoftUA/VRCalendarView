@@ -18,7 +18,6 @@ import com.vrgsoft.calendar.VrCalendarDaySettings;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -64,12 +63,21 @@ public class MainActivity extends AppCompatActivity implements OnCalendarClickLi
         findViewById(R.id.update).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               vrCalendarView.getSettings()
-                       .setOtherMonthTextStyle(VRCalendarView.BOLD)
-                       .setCurrentMonthBackgroundColor(Color.CYAN)
-                       .updateCalendar();
+                vrCalendarView.getSettings()
+                        .setOtherMonthTextStyle(VRCalendarView.BOLD)
+                        .setCurrentMonthBackgroundColor(Color.CYAN)
+                        .updateCalendar();
             }
         });
+
+        vrCalendarView.setDateFormat(df);
+        vrCalendarView.getDayOfWeekTextView(1).setTextColor(Color.CYAN);
+        vrCalendarView.getDayOfWeekTextView(2).setTextSize(20);
+        vrCalendarView.getDayOfWeekTextView(4).setTextColor(Color.GREEN);
+        vrCalendarView.getDayOfWeekTextView(6).setTextColor(Color.RED);
+        vrCalendarView.getNextMonthImageButton().setImageResource(R.drawable.ic_next_button_example);
+        vrCalendarView.weekContainer().setBackgroundColor(Color.LTGRAY);
+        vrCalendarView.titleContainer().setBackgroundColor(Color.GRAY);
     }
 
     @Override
@@ -109,35 +117,9 @@ public class MainActivity extends AppCompatActivity implements OnCalendarClickLi
 
     @Override
     public List<VrCalendarDay> getCustomizeDayView(Calendar calendar) {
-        List<VrCalendarDay> vrCalendarDays = new ArrayList<>();
-        VrCalendarDay today = new VrCalendarDay();
-        today.setDate(new Date());
 
-        VrCalendarDaySettings todaySettings = new VrCalendarDaySettings();
-        todaySettings.setDayTextColor(Color.CYAN);
-        today.setVrCalendarDaySettings(todaySettings);
-        today.setVRCalendarCustomViewCallback(new VRCalendarCustomViewCallback() {
-            @Override
-            public View getNewCustomiseView() {
-                ImageView imageView = new ImageView(MainActivity.this);
-                imageView.setImageResource(R.drawable.ic_stat_name);
-                return imageView;
-            }
-        });
+        CustomDayUtils customDayUtils = new CustomDayUtils();
 
-        vrCalendarDays.add(today);
-
-        VrCalendarDay tomorrow = new VrCalendarDay();
-        Date d = new Date(1513435110633L);
-        tomorrow.setDate(d);
-        VrCalendarDaySettings vrtomorCalendarDaySettings = new VrCalendarDaySettings();
-        vrtomorCalendarDaySettings.setDayTextStyle(VRCalendarView.BOLD);
-        vrtomorCalendarDaySettings.setDayBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
-        vrtomorCalendarDaySettings.setDayTextColor(ContextCompat.getColor(this, R.color.colorYellow));
-        tomorrow.setVrCalendarDaySettings(vrtomorCalendarDaySettings);
-
-        vrCalendarDays.add(tomorrow);
-
-        return vrCalendarDays;
+        return customDayUtils.getCustomizeDayView(this);
     }
 }

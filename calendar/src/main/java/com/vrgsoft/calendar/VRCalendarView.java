@@ -161,8 +161,12 @@ public class VRCalendarView extends LinearLayout {
         return tvCalendarDate;
     }
 
-    public View weekContainer() {
+    public View titleContainer() {
         return findViewById(R.id.rBarTitle);
+    }
+
+    public View weekContainer() {
+        return findViewById(R.id.calendar_days);
     }
 
     public TextView getDayOfWeekTextView(int dayOfWeek) {
