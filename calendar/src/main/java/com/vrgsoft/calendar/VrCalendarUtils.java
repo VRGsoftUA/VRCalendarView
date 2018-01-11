@@ -1,6 +1,7 @@
 package com.vrgsoft.calendar;
 
 import android.graphics.drawable.Drawable;
+import android.view.View;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -61,13 +62,19 @@ class VrCalendarUtils {
         return vrCalendarDaySettings;
     }
 
-    VrCalendarDay transfer(VrCalendarDay day, CalendarSettingWrapper calendarSettingWrapper, int position) {
+    VrCalendarDay transfer(final VrCalendarDay day, CalendarSettingWrapper calendarSettingWrapper, int position) {
         Calendar currentDate = Calendar.getInstance();
         currentDate.add(Calendar.MONTH, position);
         VrCalendarDay vrCalendarDay = new VrCalendarDay();
         vrCalendarDay.setChoosen(day.isChoosen());
         vrCalendarDay.setDate(day.getDate());
-        vrCalendarDay.setVRCalendarCustomViewCallback(day.getVRCalendarCustomViewCallback());
+        VRCalendarCustomViewCallback calendarCustomViewCallback = new VRCalendarCustomViewCallback() {
+            @Override
+            public View getNewCustomiseView() {
+                return day.getVRCalendarCustomViewCallback().getNewCustomiseView();
+            }
+        };
+        vrCalendarDay.setVRCalendarCustomViewCallback(calendarCustomViewCallback);
         vrCalendarDay.setVrCalendarDaySettings(getDaySettings(currentDate
                 , vrCalendarDay.getDate(), calendarSettingWrapper, day.getVrCalendarDaySettings()));
         return vrCalendarDay;

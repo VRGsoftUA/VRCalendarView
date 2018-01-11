@@ -23,7 +23,7 @@ public class CustomDayUtils {
 
         vrCalendarDays.add(getToday(context));
         vrCalendarDays.add(getSomeDay(context));
-        vrCalendarDays.add(getAnotherDay(context));
+        vrCalendarDays.add(getSomeDayAgain(context));
         vrCalendarDays.add(getOneMoreDay(context));
         vrCalendarDays.add(getDay0(context));
         vrCalendarDays.add(getDay1(context));
@@ -31,21 +31,6 @@ public class CustomDayUtils {
         vrCalendarDays.add(getDay3(context));
 
         return vrCalendarDays;
-    }
-
-    private VrCalendarDay getAnotherDay(final Context context) {
-        VrCalendarDay tomorrow = new VrCalendarDay();
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DAY_OF_MONTH, 2);
-        Date d = cal.getTime();
-        tomorrow.setDate(d);
-        VrCalendarDaySettings vrtomorCalendarDaySettings = new VrCalendarDaySettings();
-        vrtomorCalendarDaySettings.setDayTextStyle(VRCalendarView.BOLD);
-        vrtomorCalendarDaySettings.setDayBackgroundColor(ContextCompat.getColor(context, R.color.colorAccent));
-        vrtomorCalendarDaySettings.setDayTextColor(ContextCompat.getColor(context, R.color.colorYellow));
-        tomorrow.setVrCalendarDaySettings(vrtomorCalendarDaySettings);
-
-        return tomorrow;
     }
 
     private VrCalendarDay getOneMoreDay(final Context context) {
@@ -87,7 +72,37 @@ public class CustomDayUtils {
         });
 
         Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DAY_OF_MONTH, -2);
+        cal.add(Calendar.DAY_OF_MONTH, -5);
+        someDay.setDate(cal.getTime());
+        someDay.setVrCalendarDaySettings(someDaySettings);
+        return someDay;
+    }
+
+    private VrCalendarDay getSomeDayAgain(final Context context) {
+
+        VrCalendarDay someDay = new VrCalendarDay();
+
+        VrCalendarDaySettings someDaySettings = new VrCalendarDaySettings();
+        someDaySettings.setDayTextColor(Color.TRANSPARENT);
+        someDaySettings.setDayBackgroundColor(Color.TRANSPARENT);
+        someDay.setVrCalendarDaySettings(someDaySettings);
+        someDay.setVRCalendarCustomViewCallback(new VRCalendarCustomViewCallback() {
+            @Override
+            public View getNewCustomiseView() {
+
+                ImageView imageView = new ImageView(context);
+                imageView.setImageResource(R.drawable.simple_ex);
+                GlideApp.with(context)
+                        .asGif()
+                        .load(R.drawable.giphy)
+                        .into(imageView)
+                        .clearOnDetach();
+                return imageView;
+            }
+        });
+
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DAY_OF_MONTH, -6);
         someDay.setDate(cal.getTime());
         someDay.setVrCalendarDaySettings(someDaySettings);
         return someDay;
@@ -98,7 +113,7 @@ public class CustomDayUtils {
         today.setDate(new Date());
 
         VrCalendarDaySettings todaySettings = new VrCalendarDaySettings();
-        todaySettings.setDayTextColor(Color.TRANSPARENT);
+        todaySettings.setDayTextColor(ContextCompat.getColor(context, R.color.colorTransparent));
         today.setVrCalendarDaySettings(todaySettings);
         today.setVRCalendarCustomViewCallback(new VRCalendarCustomViewCallback() {
             @Override

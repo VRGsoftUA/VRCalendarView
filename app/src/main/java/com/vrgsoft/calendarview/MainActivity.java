@@ -1,20 +1,20 @@
 package com.vrgsoft.calendarview;
 
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.vrgsoft.calendar.VRCalendarCustomViewCallback;
-import com.vrgsoft.calendar.calendar_listeners.OnCalendarClickListener;
-import com.vrgsoft.calendar.calendar_listeners.OnCalendarLongClickListener;
 import com.vrgsoft.calendar.VRCalendarView;
-import com.vrgsoft.calendar.calendar_listeners.VRCalendarMonthCallback;
 import com.vrgsoft.calendar.VrCalendarDay;
 import com.vrgsoft.calendar.VrCalendarDaySettings;
+import com.vrgsoft.calendar.calendar_listeners.OnCalendarClickListener;
+import com.vrgsoft.calendar.calendar_listeners.OnCalendarLongClickListener;
+import com.vrgsoft.calendar.calendar_listeners.VRCalendarMonthCallback;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -71,13 +71,12 @@ public class MainActivity extends AppCompatActivity implements OnCalendarClickLi
         });
 
         vrCalendarView.setDateFormat(df);
-        vrCalendarView.getDayOfWeekTextView(VRCalendarView.TUESDAY).setTextColor(Color.CYAN);
-        vrCalendarView.getDayOfWeekTextView(VRCalendarView.WEDNESDAY).setTextSize(20);
-        vrCalendarView.getDayOfWeekTextView(VRCalendarView.FRIDAY).setTextColor(Color.GREEN);
+        vrCalendarView.getDayOfWeekTextView(VRCalendarView.SATURDAY).setTextSize(20);
+        vrCalendarView.getDayOfWeekTextView(VRCalendarView.SUNDAY).setTextSize(20);
+        vrCalendarView.getDayOfWeekTextView(VRCalendarView.SATURDAY).setTextColor(Color.RED);
         vrCalendarView.getDayOfWeekTextView(VRCalendarView.SUNDAY).setTextColor(Color.RED);
-        vrCalendarView.getNextMonthImageButton().setImageResource(R.drawable.ic_next_button_example);
-        vrCalendarView.weekContainer().setBackgroundColor(Color.LTGRAY);
-        vrCalendarView.titleContainer().setBackgroundColor(Color.GRAY);
+        vrCalendarView.weekContainer().setBackgroundColor(ContextCompat.getColor(this, R.color.colorToday));
+        vrCalendarView.titleContainer().setBackgroundColor(ContextCompat.getColor(this, R.color.colorTitle));
     }
 
     @Override

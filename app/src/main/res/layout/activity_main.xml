@@ -10,7 +10,7 @@
         android:id="@+id/calendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:vr_background_color="@color/colorDark"
+        app:vr_background_color="@color/colorTitle"
         app:vr_calendar_day_text_size="15sp"
         app:vr_chosen_day_background_color="@color/colorGreen"
         app:vr_chosen_day_background_drawable="@drawable/background"
@@ -21,7 +21,7 @@
         app:vr_next_button="@drawable/ic_next"
         app:vr_other_month_text_color="@color/colorPrimary"
         app:vr_previous_button="@drawable/ic_previous"
-        app:vr_title_text_color="@color/colorGreen"
+        app:vr_title_text_color="@color/colorToday"
         app:vr_week_days_color="@android:color/darker_gray" />
 
 

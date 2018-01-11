@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_bright">
+    android:background="@color/colorTitle">
 
     <View
         android:layout_width="16dp"
@@ -13,7 +13,7 @@
         android:layout_marginEnd="-8dp"
         android:layout_marginRight="-8dp"
         android:layout_marginTop="-8dp"
-        android:background="#ff0004"
+        android:background="#6bcf7f"
         android:rotation="45" />
 
 </RelativeLayout>

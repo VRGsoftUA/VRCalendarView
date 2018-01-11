@@ -5,6 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorGreen">#00f234</color>
     <color name="colorToday">#0ea8ae</color>
+    <color name="colorTitle">#016b70</color>
     <color name="colorYellow">#ffff00</color>
     <color name="colorDark">#000000</color>
+    <color name="colorTransparent">#02000000</color>
 </resources>
