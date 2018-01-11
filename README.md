@@ -16,7 +16,7 @@ allprojects {
 
 dependencies {
 
-    compile 'com.github.VRGsoftUA:VRCalendarView:1.0.1'
+    compile 'com.github.VRGsoftUA:VRCalendarView:1.0.2'
 
 }
 ```
